@@ -1,5 +1,5 @@
-const subtract = (x, y) => x - y;
+const id = x => x;
 
-export default function sorted (fn = subtract) {
-  return [...this].sort(fn);
+export default function sorted (fn = id) {
+  return [...this].sort((x, y) => fn(x) - fn(y));
 };
